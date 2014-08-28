@@ -17,14 +17,15 @@ var app = angular.module('knottypinesApp', [
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'firebase'
+    'firebase',
+    'ui.bootstrap'
   ])
-  .constant('FIREBASE_URL', 'https://brilliant-torch-2398.firebaseIO.com/');
+  .constant('FIREBASE_URL', 'https://blistering-torch-6850.firebaseIO.com/');
 
 app.config(function ($routeProvider) {
   $routeProvider
   .when('/', {
-    templateUrl: 'views/shows.html',
+    templateUrl: 'views/main.html',
     controller: 'ShowsCtrl'
   })
   .when('/shows', {
