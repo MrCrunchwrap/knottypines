@@ -1,0 +1,43 @@
+<div class="container">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Venue</th>
+				<th>City</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="show in shows">
+				<td>{{show.date | date}}</td>
+				<td>{{show.venue}}</td>
+				<td>{{show.city}}</td>
+				<td>{{show.details}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="container">
+<h3>Add show</h3>
+<form role="form" ng-show="true" ng-submit="addShow(show)">
+  <div class="form-group col-med-4">
+    <label for="inputVenue">Venue</label>
+    <input type="text" class="form-control" id="inputVenue" placeholder="Driftwood Char Bar" ng-model="show.venue">
+  </div>
+  <div class="form-group col-med-4">
+    <label for="inputDate">Date</label>
+    <input type="date" class="form-control" id="inputDate" ng-model="show.date">
+  </div>
+  <div class="form-group col-med-4">
+    <label for="inputCity">City</label>
+    <input type="text" class="form-control" id="inputCity" placeholder="Minneapolis, MN" ng-model="show.city">
+  </div>
+  <div class="form-group col-med-4">
+    <label for="inputDetails">Details</label>
+    <input type="text" class="form-control" id="inputDetails" placeholder="Enter details" ng-model="show.details">
+  </div>
+  <button type="submit" class="btn btn-default">Add show</button>
+</form>
+</div>
