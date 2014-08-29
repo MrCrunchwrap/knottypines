@@ -1,61 +1,80 @@
 <!doctype html>
 <html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body ng-app="knottypinesApp">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.icon-large.min.css">
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="knottypinesApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+      <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header" ng-controller="HeaderCtrl">
-        <ul class="nav nav-pills pull-right">
-          <li ng-class="{ active: isActive('/')}"><a ng-href="#">Home</a></li>
-          <li ng-class="{ active: isActive('/about')}"><a ng-href="#/about">About</a></li>
-          <li ng-class="{ active: isActive('/shows')}"><a ng-href="#/shows">Shows</a></li>
-          <li ng-class="{ active: isActive('/members')}"><a ng-href="#/members">Members</a></li>
-          <li ng-class="{ active: isActive('/music')}"><a ng-href="#/about">Music</a></li>
-          <li ng-class="{ active: isActive('/contact')}"><a ng-href="#/contact">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">knottypines</h3>
-      </div>
-
-      <div ng-view=""></div>
-
-      <div class="footer">
+      <!-- Fixed navbar -->
+      <div class="navbar navbar-default navbar-fixed-top" id="top-nav" role="navigation" ng-controller="HeaderCtrl">
         <div class="container">
-          <span class="glyphicon glyphicon-heart"></span> from the Knotty Pines
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">the knotty pines</a>
+          </div>
+          <div class="navbar-collapse collapse" id="main-navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li ng-class="{ active: isActive('/')}"><a ng-href="#">home</a></li>
+              <li ng-class="{ active: isActive('/about')}"><a ng-href="#/about">about</a></li>
+              <li ng-class="{ active: isActive('/shows')}"><a ng-href="#/shows">shows</a></li>
+              <li ng-class="{ active: isActive('/members')}"><a ng-href="#/members">members</a></li>
+              <li ng-class="{ active: isActive('/music')}"><a ng-href="#/about">music</a></li>
+              <li ng-class="{ active: isActive('/contact')}"><a ng-href="#/contact">contact</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right social-nav">
+              <li><a href="https://www.facebook.com/TheKnottyPines">facebook</a>
+              <li><a href="https://twitter.com/TheKnottyPines">twitter</a>
+            </ul>
+          </div><!--/.nav-collapse -->
         </div>
       </div>
-    </div>
+
+      <!-- Add your site or application content here -->
+      <div class="container">
+        <div ng-view=""></div>
+
+        <div class="footer">
+          <div class="container">
+            <span class="glyphicon glyphicon-heart"></span> from the Knotty Pines
+          </div>
+        </div>
+      </div>
 
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+      <script>
        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
-    </script>
+     </script>
 
-    <!-- build:js(.) scripts/oldieshim.js -->
+     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
@@ -81,18 +100,18 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/contact.js"></script>
-        <script src="scripts/controllers/modalInstance.js"></script>
-        <script src="scripts/controllers/addShowModal.js"></script>
-        <script src="scripts/controllers/mainCarousel.js"></script>
-        <script src="scripts/controllers/header.js"></script>
-        <script src="scripts/controllers/shows.js"></script>
-        <script src="scripts/services/show.js"></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/contact.js"></script>
+    <script src="scripts/controllers/modalInstance.js"></script>
+    <script src="scripts/controllers/addShowModal.js"></script>
+    <script src="scripts/controllers/mainCarousel.js"></script>
+    <script src="scripts/controllers/header.js"></script>
+    <script src="scripts/controllers/shows.js"></script>
+    <script src="scripts/services/show.js"></script>
 
-        <!-- endbuild -->
-</body>
-</html>
+    <!-- endbuild -->
+  </body>
+  </html>
