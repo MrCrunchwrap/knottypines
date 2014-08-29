@@ -9,11 +9,12 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="show in shows">
+			<tr ng-repeat="(showId, show) in shows">
 				<td>{{show.date | date}}</td>
 				<td>{{show.venue}}</td>
 				<td>{{show.city}}</td>
 				<td>{{show.details}}</td>
+				<td><a ng-click="deleteShow(showId)">delete</a>
 			</tr>
 		</tbody>
 	</table>
