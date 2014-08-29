@@ -26,7 +26,7 @@ app.config(function ($routeProvider) {
   $routeProvider
   .when('/', {
     templateUrl: 'views/main.html',
-    controller: 'ShowsCtrl'
+    controller: 'MainCtrl'
   })
   .when('/shows', {
     templateUrl: 'views/shows.html',
