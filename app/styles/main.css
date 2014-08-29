@@ -32,4 +32,6 @@ body {
   border-top: 1px solid #e5e5e5;
 }
 
+body { padding-top: 70px; }
+
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
