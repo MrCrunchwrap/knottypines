@@ -40,6 +40,13 @@ app.config(function ($routeProvider) {
     templateUrl: 'views/contact.html',
     controller: 'ContactCtrl'
   })
+  .when('/members', {
+    templateUrl: 'views/members.html',
+    controller: 'MembersCtrl'
+  })
+  .when('/admin/', {
+    templateUrl: 'views/'
+  })
   .otherwise({
     redirectTo: '/'
   });
