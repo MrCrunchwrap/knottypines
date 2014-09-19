@@ -1,5 +1,16 @@
-<section>Ben</section>
-<section>Ben</section>
-<section>Ben</section>
-<section>Ben</section>
-<section>Ben</section>
+<div class="band-members">
+  
+  <accordion close-others="oneAtATime">
+    
+    <accordion-group heading="{{member.name}}" ng-repeat="member in members">
+    <div class="member-info">
+    	<img class="img-responsive member-picture" ng-src="{{member.picture}}"/>
+
+    	<p class="member-description">
+    	{{member.content}}
+    	</p>
+    </div>
+    </accordion-group>
+
+  </accordion>
+</div>
