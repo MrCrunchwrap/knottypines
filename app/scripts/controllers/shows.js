@@ -13,6 +13,8 @@ app.controller('ShowsCtrl', ['$scope', '$firebase', 'FIREBASE_URL', 'Show', func
 
 	$scope.show = {};
 
+	$scope.predicate = '-date';
+
 	$scope.deleteShow = function (show) {
 		Show.delete(show);
 	};
